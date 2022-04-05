@@ -51,19 +51,16 @@ def main():
     run.log("Regularization Strength:", np.float(args.C))
     run.log("Max iterations:", np.int(args.max_iter))
     
-    # HK: I cloned the repository from the main page
-    # TODO: Create TabularDataset using TabularDatasetFactory
-    # Data is located at:
-    # "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
-
-    ds = ### YOUR CODE HERE ###
+    # HK-Step 0: I cloned the repository from the main page
+    
+    # HK-Step 1: Create TabularDataset using TabularDatasetFactory
+    data_location = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
+    ds = TabularDatasetFactory.from_delimited_files(path=data_location)
     
     x, y = clean_data(ds)
-
-    # TODO: Split data into train and test sets.
-
-    ### YOUR CODE HERE ###a
-
+    # HK-Step 2: Split data into train and test sets.
+    x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.2)
+    
     model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
 
     accuracy = model.score(x_test, y_test)
