@@ -24,6 +24,7 @@ Furthermore, we use an early termination policy, to prevend that the optimizatio
 
 The model found by the AutoML mechanism is a VotingEnsemble of 6 different classifiers (like XGBoostClassifier, LightGBM, XGBoostClassifier and SGD). The accuracy of this compounded model was ....
 
+![Semantic description of image](/images/path/to/folder/image.png "Image Title")
 
 ## Pipeline comparison
 
@@ -42,3 +43,4 @@ All links below come from a 1883 page document describing Azure ML and contains 
 - [Configure and submit training runs](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-set-up-training-targets)
 - [HyperDriveConfig Class](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.hyperdrive.hyperdriveconfig?view=azure-ml-py)
 - [How to tune hyperparamters](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters)
+- [How to run a notebook](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-run-jupyter-notebooks#run-a-notebook-or-python-script)
