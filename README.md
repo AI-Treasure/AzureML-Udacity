@@ -24,7 +24,14 @@ Furthermore, we use an early termination policy, to prevend that the optimizatio
 
 The model found by the AutoML mechanism is a VotingEnsemble of 6 different classifiers (like XGBoostClassifier, LightGBM, XGBoostClassifier and SGD). The accuracy of this compounded model was ....
 
-![Semantic description of image](/images/path/to/folder/image.png "Image Title")
+![Semantic description of image](plot1.GIF "Image Title")
+![Semantic description of image](plot2.GIF "Image Title")
+![Semantic description of image](plot3.GIF "Image Title")
+![Semantic description of image](plot4.GIF "Image Title")
+![Semantic description of image](plot5.GIF "Image Title")
+![Semantic description of image](plot6.GIF "Image Title")
+![Semantic description of image](plot7.GIF "Image Title")
+
 
 ## Pipeline comparison
 
