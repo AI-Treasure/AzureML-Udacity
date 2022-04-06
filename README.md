@@ -6,13 +6,17 @@ In this project, we build and optimize an Azure ML pipeline using the Python SDK
 This model is then compared to an Azure AutoML run.
 
 ## Summary
-In this project, we use (part of) the Bank Marketing Data Set from the UCI Machine Learning Repository. The data is related with direct marketing campaigns of a Portugese banking institution ([More info can be found here](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing)). We seeq to predict the output variable y of this dataset, which denotes whether the client subscribed a term deposit (yes or no).
+In this project, we use (part of) the Bank Marketing Data Set from the UCI Machine Learning Repository. The data is related with direct marketing campaigns of a Portugese banking institution. ([More info can be found here](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing)). We seeq to predict the output variable y of this dataset, which denotes whether the client subscribed a term deposit (yes or no).
 
 In this report, we perform two methods of create a model for this. In the first part, we use HyperDrive to optimize a Logistic Regression Model. This results in an Accuracy of 91.168 % with the hyperparameters C = 0.1 and max_iter = 70. In the second part we use Azure's AutoML to find an optimal Model. Here the best performing model was a VotingEnsemble model with an accuracy of 91.17 %.
 
 ## Scikit-learn Pipeline
 
-The main steps that are being taken are shown in the diagram below. For the first method, the train.py python file contains a script that performs a Scikit-learn Logistic Regression Algorithm, which will be connected to the HyperDrive for the optimization of the hyperparameters to give the most optimal HyperDriveModel. 
+The main steps that are being taken are shown in the diagram below. 
+
+![](plot8.GIF)
+
+For the first method, the train.py python file contains a script that performs a Scikit-learn Logistic Regression Algorithm, which will be connected to the HyperDrive for the optimization of the hyperparameters to give the most optimal HyperDriveModel. 
 
 In the second approach, the Tabular Dataset is directly fed into the Azure AutoML, which will compare many models before reaching the most optimal model.
 
@@ -32,13 +36,13 @@ The model found by the AutoML mechanism is a VotingEnsemble of 6 different class
 
 ## Pipeline comparison
 
-The accuracies of the two calculated models are very comparable. But note that the AutoML model is more complex, since it consists of 6 different models.  The running time of the two models is comparable .....
+The accuracies of the two calculated models are very comparable. But note that the AutoML model is more complex, since it consists of 6 different models.  The running time of the two models is comparable, although the first one is a bit faster 18 minutes compared to the 27 miutes for AutoML.
 
 ![](plot5.GIF)
-**Compare the two models and their performance. What are the differences in accuracy? In architecture? If there was a difference, why do you think there was one?**
 
 ## Future work
-**What are some areas of improvement for future experiments? Why might these improvements help the model?**
+
+There are many areas of improvement for this model. For instance, one can do the hyperparameter method also for other models. For instance, one can use it on the XGBoostClassifier that the AutoML found. And these can then be compared to the results that we have found here. These type of more broader investigations can potentially further improve the accuracy.
 
 ## Proof of cluster clean up
 After I ran both models and after taking screenshots and inspecting the results, I deleted the compute node, as can be seen in the below picture.
